@@ -1,3 +1,4 @@
 # Lab 4
-Name:\
-Help Received:
+Name: Jager Erschabek
+Help Received:Hunter
+Syntax

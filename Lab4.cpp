@@ -90,9 +90,15 @@ string stringReverse(string toReverse)
 {
   stack<char> reverse; //declare the stack
   string newString = "";
-  /*
-    Your code goes here
-  */
+  
+  for (int i=0;i<toReverse.length(); i++){
+    reverse.push(toReverse[i]);
+  }
+  while(reverse.size() > 0){
+    newString += reverse.top();
+    reverse.pop();
+  }
+
   return newString;
 }
 
@@ -100,8 +106,23 @@ string stringReverse(string toReverse)
 bool parenCheck(string toCheck)
 {
   queue<char> checker; //declare my queue
-  /*
-    Your code goes here
-  */
-  return false; //need a return statement to compile
+
+  if(toCheck[0] == ')'){
+    return false;
+  }
+  for (int i=0;i<toCheck.length();i++){
+    if(toCheck[i] == '('){
+      checker.push('(');
+    }
+  }
+  for (int i=0;i<toCheck.length();i++){
+    if(toCheck[i] == ')'){
+      checker.pop();
+    }
+  }
+  if (checker.size() == 0){
+    return true;
+  }else{
+    return false;
+  }
 }
